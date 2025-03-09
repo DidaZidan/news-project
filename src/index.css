@@ -1,0 +1,12 @@
+.styles{
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 1px 1px 10px black;
+}
+.styles:hover{
+    scale: 1.03;
+}
+.targetbtn:hover{
+    background-color: #adadad;
+    border: 1px solid #adadad;
+}

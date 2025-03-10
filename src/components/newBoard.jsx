@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import Newsitem from "./newsitem"
-function Newboard(){
+function Newboard({category}){
     let[articles,setarticles]=useState([])
     useEffect(()=>{
         const apikey=import.meta.env.VITE_API_KEY
-        const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apikey}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apikey}`;
 
         fetch(url).then(response=> response.json()).then(data=>setarticles(data.articles));
 
-    },[])
+    },[category])
     return(
     <>
         <h2 className="text-center">Latest <span className="badge bg-danger">news</span></h2>

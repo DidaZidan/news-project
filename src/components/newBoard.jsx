@@ -6,7 +6,8 @@ function Newboard({category}){
         const apikey=import.meta.env.VITE_API_KEY
         const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apikey}`;
 
-        fetch(url).then(response=> response.json()).then(data=>setarticles(data.articles));
+        fetch(url,{   method: "GET",
+            headers: { "User-Agent": "Mozilla/5.0" },}).then(response=> response.json()).then(data=>setarticles(data.articles));
 
     },[category])
     return(
